@@ -148,6 +148,11 @@ def prepare_html(path: str, raw: bytes) -> tuple[str, str | None]:
 
     # Old HTTP webcam URLs would be mixed content on an HTTPS static site.
     markup = re.sub(r"http://(www\.princess\.com|media\.pocruises\.com\.au)/", r"https://\1/", markup, flags=re.I)
+    # Pacific Explorer's original webcam image incorrectly linked to Pacific Aria.
+    markup = markup.replace(
+        '<a href="/pacific-aria/"><img decoding="async" id="webcam116"',
+        '<a href="/pacific-explorer/"><img decoding="async" id="webcam116"',
+    )
     markup = markup.replace("</head>", '<link rel="stylesheet" href="/shipwatcher.css">\n<script defer src="/shipwatcher.js"></script>\n</head>', 1)
     if path == "/":
         markup = markup.replace("</head>", '<link rel="alternate" type="application/rss+xml" title="ShipWatcher feed" href="/feed.xml">\n</head>', 1)
