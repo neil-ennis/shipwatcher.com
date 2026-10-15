@@ -43,6 +43,19 @@ this repository's control. The message on a failed image preserves the page
 and its link; replace an image URL only after verifying a reliable new source
 and the right to use it.
 
+## Future design
+
+The current WordPress-derived layout is functional but visually sparse.
+Redesign it to make the ship webcams the focus again. Neil identified the
+[17 June 2016 Wayback capture](https://web.archive.org/web/20160617005811/http://shipwatcher.com/)
+as the visual reference. It shows a grid of live webcam images near the top,
+a blue masthead, location details beneath the cameras, ship selection
+controls, and a compact news sidebar. Adapt those strengths to a modern,
+responsive layout; do not assume the old live feeds and controls still work.
+Preserve ship page URLs, old post shortlinks, Comentario threads, and clear
+fallbacks for unavailable external webcams. Review a design preview with Neil
+before publishing it.
+
 ## Migration notes
 
 The snapshot was made on 16 October 2026 from the public website. Both
