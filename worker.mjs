@@ -2,6 +2,11 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    if (url.hostname === "www.shipwatcher.com") {
+      url.hostname = "shipwatcher.com";
+      return Response.redirect(url, 301);
+    }
+
     // Preserve WordPress's published /?p=123 shortlinks after the site
     // becomes static. Cloudflare's _redirects cannot match query strings.
     if (url.pathname === "/" && /^\d+$/.test(url.searchParams.get("p") || "")) {

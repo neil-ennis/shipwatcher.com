@@ -11,6 +11,8 @@ files belong in this repository.
 - `site/` is the deployable site: 23 ship pages, archives, theme assets, a
   sitemap, RSS feed, and the map of old WordPress post IDs.
 - `worker.mjs` preserves old `/?p=123` shortlinks using `site/postmap.json`.
+  It also redirects `www.shipwatcher.com` to the apex domain, preserving the
+  path and query string.
 - `site/shipwatcher.css` fits webcam images within the viewport and styles the
   comment area and unavailable-webcam message.
 - `site/shipwatcher.js` shows that message when an external webcam image fails.
