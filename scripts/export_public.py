@@ -81,6 +81,12 @@ def prepare_html(path: str, raw: bytes) -> tuple[str, str | None]:
     if "<html" not in markup.lower():
         raise RuntimeError(f"No HTML page at {path}")
 
+    if path == "/" or path.startswith("/page/"):
+        markup = markup.replace(
+            '<h1 class="wp-block-heading has-text-align-left">Blog</h1>',
+            '<h1 class="wp-block-heading has-text-align-left">All Web Cams</h1>',
+        )
+
     if path == "/404.html":
         markup = re.sub(
             r"<main\b[^>]*>.*?</main>",
