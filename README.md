@@ -45,8 +45,14 @@ and the right to use it.
 
 ## Migration notes
 
-The snapshot was made on 16 October 2026 from the public website. The live
-domain can be connected only after reviewing the Cloudflare preview and
-confirming that Comentario is configured. Record the previous DNS targets
-before changing them, and leave the AWS site available for rollback until the
-new live site has been checked.
+The snapshot was made on 16 October 2026 from the public website. Both
+`shipwatcher.com` and `www.shipwatcher.com` are connected to the production
+Cloudflare Worker. The previous DNS records were CNAMEs to
+`d1pvxa10u1hkdi.cloudfront.net`, DNS only, TTL Auto. The apex record had
+the comment `flattened from ANAME which is not available in Cloudflare`.
+Keep the old AWS site available for rollback until the live site is accepted.
+
+`wrangler.jsonc` uses `run_worker_first: true`: the Worker must receive
+every path so `www` redirects even when a matching static asset exists.
+The Comentario allowed origins are the live domain (`$`) and
+`shipwatcher-com.aged-night-bf73.workers.dev` for preview comments.
