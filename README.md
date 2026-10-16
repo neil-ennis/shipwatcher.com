@@ -1,71 +1,65 @@
-# ShipWatcher.com static site
+# ShipWatcher static site
 
-This repository contains a public-only snapshot of the original ShipWatcher.com
-WordPress site, prepared for Cloudflare Workers Static Assets. The old local
-WordPress installation was not used for this export because it contained
-malicious PHP. No PHP, database, private backups, or WordPress administration
-files belong in this repository.
+This repository builds [ShipWatcher.com](https://shipwatcher.com/) from a small
+ship catalog. It requires Python 3 to build and no WordPress installation,
+database, framework, or package manager. The deployed site lives in `site/`.
 
-## Contents
+## Update the catalog
 
-- `site/` is the deployable site: 23 ship pages, archives, theme assets, a
-  sitemap, RSS feed, and the map of old WordPress post IDs.
-- `worker.mjs` preserves old `/?p=123` shortlinks using `site/postmap.json`.
-  It also redirects `www.shipwatcher.com` to the apex domain, preserving the
-  path and query string.
-- `site/shipwatcher.css` fits webcam images within the viewport and styles the
-  comment area and unavailable-webcam message.
-- `site/shipwatcher.js` shows that message when an external webcam image fails.
-- `scripts/export_public.py` records how this snapshot was made from publicly
-  available pages; it is not a routine build step.
+Edit `data/ships.json` to add or update a ship. Use an operator's HTTPS webcam
+URL when possible, and check that it identifies the right ship. Set `active`
+to `false` for a retired listing: its old page remains available with a clear
+historical notice, while the fleet page no longer shows it. `data/quotes.json`
+contains the five approved, sourced homepage quotes. Keep the quote text and
+attribution together.
 
-The original footer's placeholder links were removed. WordPress comment forms
-were replaced by Comentario with a stable page ID matching each ship's path.
-Comentario uses the existing `shipwatcher.com` registration and its domain ID
-on each ship page. The page IDs preserve the paths of all 23 existing comment
-threads. The preview host must be added to that domain's allowed origins before
-comments can render there; preserve `$` for the live domain.
+Build and check the deployable site from this repository's root:
 
-## Deploy and maintain
+```powershell
+python build.py --site
+python check.py --site
+python scripts/check_site.py
+```
 
-Cloudflare builds this Worker from the GitHub repository. A commit to the
-connected production branch should trigger a new deployment. `wrangler.jsonc`
-sets `site/` as the assets directory. The Worker is required for query-string
-shortlinks, so do not deploy the `site/` directory as a standalone Pages site.
+For a local preview, run `python build.py` and serve `dist/` with an HTTP
+server. For example:
 
-To check a proposed change locally, serve `site/` using an HTTP server and run
-`python scripts/check_site.py`. A plain local server will serve pages and
-assets but will not execute `worker.mjs`; test old `/?p=` links on the Cloudflare
-preview before changing DNS.
+```powershell
+python -m http.server 8987 --bind 127.0.0.1 --directory dist
+```
 
-The webcam images remain on cruise-line servers. Their availability is outside
-this repository's control. The message on a failed image preserves the page
-and its link; replace an image URL only after verifying a reliable new source
-and the right to use it.
+The local server shows pages and assets but does not execute `worker.mjs`.
+Check old `/?p=ID` shortlinks on the Cloudflare preview or live Worker.
 
-## Future design
+## Published behavior
 
-The current WordPress-derived layout is functional but visually sparse.
-Redesign it to make the ship webcams the focus again. Neil identified the
-[17 June 2016 Wayback capture](https://web.archive.org/web/20160617005811/http://shipwatcher.com/)
-as the visual reference. It shows a grid of live webcam images near the top,
-a blue masthead, location details beneath the cameras, ship selection
-controls, and a compact news sidebar. Adapt those strengths to a modern,
-responsive layout; do not assume the old live feeds and controls still work.
-Preserve ship page URLs, old post shortlinks, Comentario threads, and clear
-fallbacks for unavailable external webcams. Review a design preview with Neil
-before publishing it.
+`build.py` creates the fleet page, About and Contact pages, 20 active ship
+pages, six historical ship pages, the old 23-post shortlink map, sitemap,
+robots file, redirects, and a custom 404 page. The imported RSS feed is kept
+in `legacy/feed.xml` and copied to `site/feed.xml` at build time. It is a
+historical feed, not a feed of new catalog changes.
 
-## Migration notes
+Ship pages retain their original paths as Comentario page IDs. Preserve those
+paths and the domain ID in `build.py` so existing discussions stay attached.
+The original WordPress snapshot is available in Git history before the
+catalog replacement; no PHP, database or private backup belongs here.
 
-The snapshot was made on 16 October 2026 from the public website. Both
-`shipwatcher.com` and `www.shipwatcher.com` are connected to the production
-Cloudflare Worker. The previous DNS records were CNAMEs to
-`d1pvxa10u1hkdi.cloudfront.net`, DNS only, TTL Auto. The apex record had
-the comment `flattened from ANAME which is not available in Cloudflare`.
-Keep the old AWS site available for rollback until the live site is accepted.
+The webcam images come from third-party operators and can stop working. The
+page shows an unavailable-camera message when an image fails. `CATALOG_REVIEW.md`
+records dated findings and candidates for catalog updates.
 
-`wrangler.jsonc` uses `run_worker_first: true`: the Worker must receive
-every path so `www` redirects even when a matching static asset exists.
-The Comentario allowed origins are the live domain (`$`) and
-`shipwatcher-com.aged-night-bf73.workers.dev` for preview comments.
+## Deployment and rollback
+
+Cloudflare builds the `shipwatcher-com` Worker automatically from the connected
+GitHub production branch. `wrangler.jsonc` serves the generated `site/` assets.
+`worker.mjs` keeps `www.shipwatcher.com` redirected to the apex address and
+preserves old WordPress `/?p=ID` shortlinks. `site/_redirects` retains the
+feed and sitemap aliases and points old listing archives to the fleet page.
+
+To roll back this replacement, redeploy the earlier Git commit `8af770d`.
+Both live hostnames were already connected to this Worker before the catalog
+replacement; no DNS change is part of this release.
+
+The previous WordPress export and its public assets were made from the public
+site in October 2026. `scripts/export_public.py` documents that one-time
+process; it is not part of normal catalog maintenance.

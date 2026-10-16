@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img" aria-labelledby="title description">
+  <title id="title">A cruise ship at sea</title>
+  <desc id="description">An illustration of a white passenger ship crossing blue water under a pale sun.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#8ab8c8"/>
+      <stop offset="1" stop-color="#d8e7e0"/>
+    </linearGradient>
+    <linearGradient id="sea" x2="0" y2="1">
+      <stop stop-color="#418698"/>
+      <stop offset="1" stop-color="#073b52"/>
+    </linearGradient>
+    <linearGradient id="hull" x2="0" y2="1">
+      <stop stop-color="#f9f9ef"/>
+      <stop offset="1" stop-color="#c7dce0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="560" fill="url(#sky)"/>
+  <circle cx="636" cy="118" r="57" fill="#f5e5b2" opacity=".95"/>
+  <path d="M0 275c122-22 203-14 290 1 109 18 214-23 313-13 78 8 146 21 197 10v58H0Z" fill="#afced0" opacity=".8"/>
+  <path d="M0 311c92-17 174 8 257 1 106-8 162-20 241-10 98 12 178-13 302-4v262H0Z" fill="url(#sea)"/>
+  <g opacity=".55" fill="none" stroke="#a9d6d8" stroke-width="3">
+    <path d="M0 351c60-12 116-13 170 0 56 13 109 16 168 2 54-13 107-15 160-4 56 11 114 13 173 0 46-11 88-12 129-4"/>
+    <path d="M0 424c82 16 160 12 228-2 75-15 141-11 208 3 79 17 150 16 218-3 53-14 100-18 146-10"/>
+    <path d="M0 502c62-14 125-12 188 2 72 16 143 15 210-2 73-18 134-18 197 0 71 20 135 12 205-6"/>
+  </g>
+  <g transform="translate(80 151)">
+    <path d="M41 195h594l-52 82c-10 16-31 24-59 24H155c-35 0-58-13-70-30Z" fill="#183d50"/>
+    <path d="M38 190h600l-11 17H51Z" fill="#e9f3ef"/>
+    <path d="M92 143h487l22 47H70Z" fill="url(#hull)"/>
+    <path d="M138 104h390l29 40H113Z" fill="#f7f8ee"/>
+    <path d="M188 67h265l31 37H161Z" fill="#f7f8ee"/>
+    <path d="M272 28h143l17 39H242Z" fill="#f7f8ee"/>
+    <path d="M365 0h16v29h-16Z" fill="#dbe6e1"/>
+    <path d="M357 0h32v12h-32Z" fill="#174359"/>
+    <path d="M185 104h356m-395 40h422" stroke="#7ca6ae" stroke-width="3"/>
+    <g fill="#356a7b">
+      <rect x="279" y="42" width="21" height="11" rx="2"/><rect x="311" y="42" width="21" height="11" rx="2"/><rect x="343" y="42" width="21" height="11" rx="2"/><rect x="375" y="42" width="21" height="11" rx="2"/>
+      <rect x="201" y="79" width="22" height="12" rx="2"/><rect x="236" y="79" width="22" height="12" rx="2"/><rect x="271" y="79" width="22" height="12" rx="2"/><rect x="306" y="79" width="22" height="12" rx="2"/><rect x="341" y="79" width="22" height="12" rx="2"/><rect x="376" y="79" width="22" height="12" rx="2"/><rect x="411" y="79" width="22" height="12" rx="2"/>
+      <rect x="143" y="117" width="26" height="13" rx="2"/><rect x="181" y="117" width="26" height="13" rx="2"/><rect x="219" y="117" width="26" height="13" rx="2"/><rect x="257" y="117" width="26" height="13" rx="2"/><rect x="295" y="117" width="26" height="13" rx="2"/><rect x="333" y="117" width="26" height="13" rx="2"/><rect x="371" y="117" width="26" height="13" rx="2"/><rect x="409" y="117" width="26" height="13" rx="2"/><rect x="447" y="117" width="26" height="13" rx="2"/><rect x="485" y="117" width="26" height="13" rx="2"/>
+      <rect x="116" y="159" width="22" height="11" rx="2"/><rect x="150" y="159" width="22" height="11" rx="2"/><rect x="184" y="159" width="22" height="11" rx="2"/><rect x="218" y="159" width="22" height="11" rx="2"/><rect x="252" y="159" width="22" height="11" rx="2"/><rect x="286" y="159" width="22" height="11" rx="2"/><rect x="320" y="159" width="22" height="11" rx="2"/><rect x="354" y="159" width="22" height="11" rx="2"/><rect x="388" y="159" width="22" height="11" rx="2"/><rect x="422" y="159" width="22" height="11" rx="2"/><rect x="456" y="159" width="22" height="11" rx="2"/><rect x="490" y="159" width="22" height="11" rx="2"/><rect x="524" y="159" width="22" height="11" rx="2"/>
+    </g>
+    <path d="M85 225h485" stroke="#d46e54" stroke-width="6" opacity=".85"/>
+  </g>
+  <path d="M0 455c124-17 188 20 314 3 112-15 176-11 280 6 83 13 154-4 206-9v105H0Z" fill="#0b4660" opacity=".55"/>
+</svg>

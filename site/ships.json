@@ -1,0 +1,198 @@
+[
+  {
+    "legacy_post_id": 102,
+    "slug": "caribbean-princess",
+    "name": "Caribbean Princess",
+    "line": "Princess Cruises",
+    "camera_url": "https://www.princess.com/webcam/caribbean_bridge.jpg?9999"
+  },
+  {
+    "legacy_post_id": 104,
+    "slug": "coral-princess",
+    "name": "Coral Princess",
+    "line": "Princess Cruises",
+    "camera_url": "https://www.princess.com/webcam/coral_bridge.jpg?9999"
+  },
+  {
+    "legacy_post_id": 106,
+    "slug": "crown-princess",
+    "name": "Crown Princess",
+    "line": "Princess Cruises",
+    "camera_url": "https://www.princess.com/webcam/crown_bridge.jpg?9999"
+  },
+  {
+    "legacy_post_id": 11,
+    "slug": "diamond-princess",
+    "name": "Diamond Princess",
+    "line": "Princess Cruises",
+    "camera_url": "https://www.princess.com/webcam/diamond_bridge.jpg?9999"
+  },
+  {
+    "legacy_post_id": null,
+    "slug": "discovery-princess",
+    "name": "Discovery Princess",
+    "line": "Princess Cruises",
+    "camera_url": "https://www.princess.com/webcam/discovery_bridge.jpg"
+  },
+  {
+    "legacy_post_id": 108,
+    "slug": "emerald-princess",
+    "name": "Emerald Princess",
+    "line": "Princess Cruises",
+    "camera_url": "https://www.princess.com/webcam/emerald_bridge.jpg?9999"
+  },
+  {
+    "legacy_post_id": null,
+    "slug": "enchanted-princess",
+    "name": "Enchanted Princess",
+    "line": "Princess Cruises",
+    "camera_url": "https://www.princess.com/webcam/enchanted_bridge.jpg"
+  },
+  {
+    "legacy_post_id": 110,
+    "slug": "golden-princess",
+    "name": "Golden Princess",
+    "line": "Princess Cruises",
+    "active": false,
+    "current_name": "Carnival Adventure",
+    "camera_url": "https://www.princess.com/webcam/golden_bridge.jpg?9999"
+  },
+  {
+    "legacy_post_id": 112,
+    "slug": "grand-princess",
+    "name": "Grand Princess",
+    "line": "Princess Cruises",
+    "camera_url": "https://www.princess.com/webcam/grand_bridge.jpg?9999"
+  },
+  {
+    "legacy_post_id": 114,
+    "slug": "island-princess",
+    "name": "Island Princess",
+    "line": "Princess Cruises",
+    "camera_url": "https://www.princess.com/webcam/island_bridge.jpg?9999"
+  },
+  {
+    "legacy_post_id": 230,
+    "slug": "majestic-princess",
+    "name": "Majestic Princess",
+    "line": "Princess Cruises",
+    "camera_url": "https://www.princess.com/webcam/majestic_bridge.jpg?1596792452385"
+  },
+  {
+    "legacy_post_id": 220,
+    "slug": "pacific-aria",
+    "name": "Pacific Aria",
+    "line": "P&O Australia",
+    "active": false,
+    "current_name": "Celestyal Journey",
+    "camera_url": "https://media.pocruises.com.au/webcam/pr.jpg"
+  },
+  {
+    "legacy_post_id": 163,
+    "slug": "pacific-dawn",
+    "name": "Pacific Dawn",
+    "line": "P&O Australia",
+    "active": false,
+    "current_name": "Ambience",
+    "camera_url": "https://media.pocruises.com.au/webcam/pd.jpg?9999"
+  },
+  {
+    "legacy_post_id": 226,
+    "slug": "pacific-explorer",
+    "name": "Pacific Explorer",
+    "line": "P&O Australia",
+    "active": false,
+    "current_name": "Star Voyager",
+    "camera_url": "https://media.pocruises.com.au/webcam/px.jpg"
+  },
+  {
+    "legacy_post_id": 116,
+    "slug": "pacific-princess",
+    "name": "Pacific Princess",
+    "line": "Princess Cruises",
+    "active": false,
+    "current_name": "Azamara Onward",
+    "camera_url": "https://www.princess.com/webcam/pa_bridge.jpg?9999"
+  },
+  {
+    "legacy_post_id": 150,
+    "slug": "queen-elizabeth",
+    "name": "Queen Elizabeth",
+    "line": "Cunard Line",
+    "camera_url": "https://www.cunard.com/assets/cunard/ships/qel.jpg?9999"
+  },
+  {
+    "legacy_post_id": 146,
+    "slug": "queen-mary-2",
+    "name": "Queen Mary 2",
+    "line": "Cunard Line",
+    "camera_url": "https://www.cunard.com/assets/cunard/ships/qm2.jpg?9999"
+  },
+  {
+    "legacy_post_id": 148,
+    "slug": "queen-victoria",
+    "name": "Queen Victoria",
+    "line": "Cunard Line",
+    "camera_url": "https://www.cunard.com/assets/cunard/ships/qv1.jpg?9999"
+  },
+  {
+    "legacy_post_id": null,
+    "slug": "regal-princess",
+    "name": "Regal Princess",
+    "line": "Princess Cruises",
+    "camera_url": "https://www.princess.com/webcam/regal_bridge.jpg"
+  },
+  {
+    "legacy_post_id": 128,
+    "slug": "royal-princess",
+    "name": "Royal Princess",
+    "line": "Princess Cruises",
+    "camera_url": "https://www.princess.com/webcam/royal_bridge.jpg?9999"
+  },
+  {
+    "legacy_post_id": 126,
+    "slug": "ruby-princess",
+    "name": "Ruby Princess",
+    "line": "Princess Cruises",
+    "camera_url": "https://www.princess.com/webcam/ru_bridge.jpg?9999"
+  },
+  {
+    "legacy_post_id": 118,
+    "slug": "sapphire-princess",
+    "name": "Sapphire Princess",
+    "line": "Princess Cruises",
+    "camera_url": "https://www.princess.com/webcam/sapphire_bridge.jpg?9999"
+  },
+  {
+    "legacy_post_id": 120,
+    "slug": "sea-princess",
+    "name": "Sea Princess",
+    "line": "Princess Cruises",
+    "active": false,
+    "current_name": "Dream",
+    "camera_url": "https://www.princess.com/webcam/sea_bridge.jpg?9999"
+  },
+  {
+    "legacy_post_id": 233,
+    "slug": "sky-princess",
+    "name": "Sky Princess",
+    "line": "Princess Cruises",
+    "camera_url": "https://www.princess.com/webcam/sky_bridge.jpg?1596792752984"
+  },
+  {
+    "legacy_post_id": 122,
+    "slug": "star-princess",
+    "name": "Star Princess",
+    "line": "Princess Cruises",
+    "camera_url": "https://www.princess.com/webcam/star_bridge.jpg",
+    "identity_note": "This camera now shows the new Star Princess, launched in 2025. The earlier ship of this name later became Carnival Encounter."
+  },
+  {
+    "legacy_post_id": 124,
+    "slug": "sun-princess",
+    "name": "Sun Princess",
+    "line": "Princess Cruises",
+    "camera_url": "https://www.princess.com/webcam/sun_bridge.jpg",
+    "identity_note": "This camera now shows the new Sun Princess, launched in 2024. The earlier ship of this name left Princess in 2020."
+  }
+]

@@ -1,2 +1,11 @@
 /feed/ /feed.xml 301
 /wp-sitemap.xml /sitemap.xml 301
+/author/neilennis/ / 301
+/author/neilennis/page/2/ / 301
+/author/neilennis/page/3/ / 301
+/category/cunard-line/ / 301
+/category/p-o-australia/ / 301
+/category/princess-cruises/ / 301
+/category/princess-cruises/page/2/ / 301
+/page/2/ / 301
+/page/3/ / 301
