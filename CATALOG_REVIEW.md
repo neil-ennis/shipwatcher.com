@@ -1,5 +1,22 @@
 # Ship catalog review — 16 October 2026
 
+## Update — 31 October 2026
+
+Added Viking Vesta, Viking Mira and Explora III to the local catalog. Each has
+an updating [Panomax](https://cruises.panomax.com/live-cameras) JPEG preview
+and a separate link to its live interactive panorama. The three preview JPEGs
+and panorama pages returned HTTP 200 on 31 October. These are provider-hosted
+images, so continued availability and permission to embed remain external
+dependencies. The fleet filters now include Viking and Explora Journeys.
+
+No P&O camera was added. The [P&O Cruises camera directory](https://www.cruisingearth.com/ship-webcams/po-cruises/)
+says its public onboard cameras are decommissioned. P&O UK still describes a
+ship webcam on [in-cabin televisions](https://www.pocruises.com/help-hub/centre/life-on-board/cabins/cabin-facilities-and-amenities),
+which does not establish a public feed. P&O Australia was absorbed by
+[Carnival in March 2025](https://www.carnival.com.au/carnival-and-pocruises).
+The old Pacific ship pages stay historical until a current public camera is
+verified.
+
 The 23 imported entries remain in the prototype. Six obsolete camera listings
 are hidden from the active fleet but retain historical pages and original
 shortlinks. A retired ship *name* does not mean the physical vessel has been

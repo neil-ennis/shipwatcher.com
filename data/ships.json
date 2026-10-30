@@ -43,6 +43,14 @@
   },
   {
     "legacy_post_id": null,
+    "slug": "explora-iii",
+    "name": "Explora III",
+    "line": "Explora Journeys",
+    "camera_url": "https://panodata.panomax.com/cams/11876/preview_og.jpg",
+    "camera_page_url": "https://explorajourneys.panomax.com/explora-3/360"
+  },
+  {
+    "legacy_post_id": null,
     "slug": "enchanted-princess",
     "name": "Enchanted Princess",
     "line": "Princess Cruises",
@@ -77,6 +85,22 @@
     "name": "Majestic Princess",
     "line": "Princess Cruises",
     "camera_url": "https://www.princess.com/webcam/majestic_bridge.jpg?1596792452385"
+  },
+  {
+    "legacy_post_id": null,
+    "slug": "viking-mira",
+    "name": "Viking Mira",
+    "line": "Viking",
+    "camera_url": "https://panodata.panomax.com/cams/12052/preview_og.jpg",
+    "camera_page_url": "https://viking.panomax.com/mira"
+  },
+  {
+    "legacy_post_id": null,
+    "slug": "viking-vesta",
+    "name": "Viking Vesta",
+    "line": "Viking",
+    "camera_url": "https://panodata.panomax.com/cams/10384/preview_og.jpg",
+    "camera_page_url": "https://viking.panomax.com/vesta"
   },
   {
     "legacy_post_id": 220,

@@ -16,7 +16,7 @@ if sys.argv[1:] not in ([], ["--site"]):
     raise SystemExit("Usage: python build.py [--site]")
 OUTPUT = ROOT / ("site" if "--site" in sys.argv[1:] else "dist")
 SHIPS = json.loads((ROOT / "data" / "ships.json").read_text(encoding="utf-8"))
-ALL_LINES = ("Princess Cruises", "P&O Australia", "Cunard Line")
+ALL_LINES = ("Princess Cruises", "Viking", "Explora Journeys", "P&O Australia", "Cunard Line")
 ACTIVE_SHIPS = [ship for ship in SHIPS if ship.get("active", True)]
 LINES = tuple(line for line in ALL_LINES if any(ship["line"] == line for ship in ACTIVE_SHIPS))
 QUOTES = json.loads((ROOT / "data" / "quotes.json").read_text(encoding="utf-8"))
@@ -42,6 +42,10 @@ def validate() -> None:
         url = urlsplit(ship["camera_url"])
         if url.scheme != "https" or not url.hostname:
             raise ValueError(f"Camera URL must use HTTPS for {slug}")
+        if ship.get("camera_page_url"):
+            page_url = urlsplit(ship["camera_page_url"])
+            if page_url.scheme != "https" or not page_url.hostname:
+                raise ValueError(f"Camera page URL must use HTTPS for {slug}")
         slugs.add(slug)
         if not ship.get("active", True) and not ship.get("current_name"):
             raise ValueError(f"Historical ship needs a current name: {slug}")
@@ -89,7 +93,7 @@ def layout(title: str, description: str, main: str, *, page: str = "", comments_
   <footer class="site-footer">
     <div class="wrap footer-inner">
       <div><strong>ShipWatcher</strong><p>An independent window onto the world's passenger ships.</p></div>
-      <div class="footer-links"><a href="/about/">About</a><a href="/contact/">Contact</a><p>Camera images are supplied by their operators and may be unavailable.</p></div>
+      <div class="footer-links"><a href="/about/">About</a><a href="/contact/">Contact</a><p>Camera images are supplied by external providers and may be unavailable.</p></div>
     </div>
   </footer>
 </body>
@@ -111,12 +115,13 @@ def camera_frame(ship: dict, *, detail: bool = False) -> str:
 
 
 def card(ship: dict) -> str:
+    caption = "Open live panorama" if ship.get("camera_page_url") else "View ship camera"
     return f"""<article class="ship-card" data-ship-card data-line="{esc(ship['line'])}" data-name="{esc(ship['name'].lower())}">
       <a href="/{esc(ship['slug'])}/" aria-label="View {esc(ship['name'])}">
         {camera_frame(ship)}
         <div class="card-body"><span class="eyebrow">{esc(ship['line'])}</span>
           <div class="card-title-row"><h3>{esc(ship['name'])}</h3><span class="card-arrow" aria-hidden="true">↗</span></div>
-          <span class="card-caption">View ship camera</span>
+          <span class="card-caption">{caption}</span>
         </div>
       </a>
     </article>"""
@@ -149,11 +154,11 @@ def home_page() -> str:
       <div class="section-heading"><div><span class="section-label dark"><span class="label-line"></span> Browse the fleet</span><h2 id="fleet-title">Ship cameras</h2></div><p>Browse by cruise line or find a ship by name.</p></div>
       <div class="fleet-tools"><div class="filters" role="group" aria-label="Filter by cruise line"><button type="button" class="filter-chip active" data-filter="all" aria-pressed="true">All ships</button>{chips}</div>
         <label class="search-field"><span class="visually-hidden">Search ships</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><input type="search" placeholder="Find a ship" autocomplete="off" data-ship-search></label></div>
-      <div class="results-heading"><p id="results-count" role="status">Showing all {len(ACTIVE_SHIPS)} ships</p><span>Camera images from cruise operators</span></div>
+      <div class="results-heading"><p id="results-count" role="status">Showing all {len(ACTIVE_SHIPS)} ships</p><span>Camera images from external providers</span></div>
       <div class="ship-grid" id="ship-grid">{cards}</div>
       <p class="empty-state" data-empty hidden>No ships match that search. Try a different name or cruise line.</p>
     </section>
-    <section id="about" class="about-section"><div class="wrap about-grid"><div><span class="section-label dark"><span class="label-line"></span> About this collection</span><h2>A front-row seat<br>to the open water.</h2></div><div><p>ShipWatcher brings together links to passenger-ship webcam images in one place. The cameras are run by cruise lines, so their images and availability can change without notice.</p><p>This is an independent catalog. A loaded camera image may be a still frame and does not guarantee a live feed.</p></div></div></section>
+    <section id="about" class="about-section"><div class="wrap about-grid"><div><span class="section-label dark"><span class="label-line"></span> About this collection</span><h2>A front-row seat<br>to the open water.</h2></div><div><p>ShipWatcher brings together links to passenger-ship cameras in one place. Cruise lines and camera providers run the cameras, so images and availability can change without notice.</p><p>This is an independent catalog. A loaded camera image may be a still frame and does not guarantee a live feed.</p></div></div></section>
     """
     return layout("Ship cameras", "Explore passenger ship webcam images by cruise line and ship name.", main, page="home")
 
@@ -165,7 +170,7 @@ def about_page() -> str:
       <div class="editorial-grid"><div><span class="section-label dark"><span class="label-line"></span> The story behind ShipWatcher</span><h1>For the love<br>of ships.</h1><p class="editorial-intro">A few minutes at a ship's bridge can take you a long way.</p></div>
       <div class="editorial-copy"><p>Ships have been part of my life since my earliest memory. In 1965, my family migrated from the UK to Australia aboard <em>Ellinis</em>. My father had made a sea journey of his own as a child, travelling from India to Scotland aboard <em>Tegelberg</em> in the late 1940s. The family trail reaches back to 1841, when Thomas Ennis sailed from England to Madras aboard <em>Columbus</em>.</p>
       <p>Perhaps that is why I still find myself drawn to a ship on the horizon. I made ShipWatcher for anyone who shares that curiosity. It gathers passenger-ship cameras in one place, so you can follow a vessel across the water or take a short virtual cruise from your desk.</p>
-      <p>The camera images belong to the cruise operators. Some are still frames, and their availability changes. I keep this independent catalog as a place to enjoy the view and discover where each ship may be travelling.</p>
+      <p>The camera images belong to their providers. Some are still frames, and their availability changes. I keep this independent catalog as a place to enjoy the view and discover where each ship may be travelling.</p>
       <p class="editorial-signoff">— Neil Ennis</p>
       <a class="editorial-action" href="/">Explore the fleet <span aria-hidden="true">↗</span></a></div></div>
     </div>"""
@@ -186,14 +191,26 @@ def contact_page() -> str:
 
 def ship_page(ship: dict, index: int) -> str:
     next_ship = ACTIVE_SHIPS[(index + 1) % len(ACTIVE_SHIPS)]
+    live_camera = bool(ship.get("camera_page_url"))
+    source_url = ship.get("camera_page_url", ship["camera_url"])
+    source_label = "Open live panorama" if live_camera else "Open source image"
+    camera_label = "Live camera preview" if live_camera else "Camera image"
+    camera_note = (
+        "Panomax supplies this preview. Open the live panorama for the interactive view."
+        if live_camera else f"Provided by {ship['line']}. Availability can change."
+    )
+    aside_note = (
+        "This preview comes from Panomax. Open the live panorama to explore the full view."
+        if live_camera else "Webcam images are hosted by the ship operator. A loaded camera image may be a still frame and availability can change."
+    )
     main = f"""
     <div class="wrap ship-detail">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">All cameras</a><span aria-hidden="true">/</span><span>{esc(ship['name'])}</span></nav>
       <div class="detail-heading"><div><span class="section-label dark"><span class="label-line"></span> {esc(ship['line'])}</span><h1>{esc(ship['name'])}</h1><p>A ship's-eye view from an external camera.</p></div><a class="back-link" href="/">← Back to the fleet</a></div>
       <div class="detail-grid"><section class="camera-panel" aria-label="{esc(ship['name'])} camera">
         {camera_frame(ship, detail=True)}
-        <div class="camera-controls"><div><span class="panel-kicker">Camera image</span><p>Provided by {esc(ship['line'])}. Availability can change.</p></div><div class="control-actions"><button type="button" class="text-button" data-camera-refresh>↻ Refresh image</button><a class="text-button" href="{esc(ship['camera_url'])}" target="_blank" rel="noopener noreferrer">Open source image ↗</a></div></div>
-      </section><aside class="detail-aside"><span class="aside-number">{index + 1:02d} / {len(ACTIVE_SHIPS):02d}</span><h2>Watching the<br>waterline.</h2><p>Webcam images are hosted by the ship operator. A loaded camera image may be a still frame and availability can change.</p><div class="aside-rule"></div><span class="eyebrow">Up next</span><a class="next-ship" href="/{esc(next_ship['slug'])}/">{esc(next_ship['name'])} <span aria-hidden="true">↗</span></a></aside></div>
+        <div class="camera-controls"><div><span class="panel-kicker">{camera_label}</span><p>{esc(camera_note)}</p></div><div class="control-actions"><button type="button" class="text-button" data-camera-refresh>↻ Refresh image</button><a class="text-button" href="{esc(source_url)}" target="_blank" rel="noopener noreferrer">{source_label} ↗</a></div></div>
+      </section><aside class="detail-aside"><span class="aside-number">{index + 1:02d} / {len(ACTIVE_SHIPS):02d}</span><h2>Watching the<br>waterline.</h2><p>{esc(aside_note)}</p><div class="aside-rule"></div><span class="eyebrow">Up next</span><a class="next-ship" href="/{esc(next_ship['slug'])}/">{esc(next_ship['name'])} <span aria-hidden="true">↗</span></a></aside></div>
       {f'<p class="identity-note">{esc(ship["identity_note"])}</p>' if ship.get('identity_note') else ''}
     </div>"""
     return layout(ship["name"], f"View the {ship['name']} webcam image in the ShipWatcher catalog.", main, comments_page_id=f"/{ship['slug']}/")

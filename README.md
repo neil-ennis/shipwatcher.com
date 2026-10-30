@@ -7,7 +7,9 @@ database, framework, or package manager. The deployed site lives in `site/`.
 ## Update the catalog
 
 Edit `data/ships.json` to add or update a ship. Use an operator's HTTPS webcam
-URL when possible, and check that it identifies the right ship. Set `active`
+URL when possible, and check that it identifies the right ship. For interactive
+Panomax cameras, `camera_url` is the updating JPEG preview and
+`camera_page_url` opens the live panorama. Set `active`
 to `false` for a retired listing: its old page remains available with a clear
 historical notice, while the fleet page no longer shows it. `data/quotes.json`
 contains the five approved, sourced homepage quotes. Keep the quote text and
@@ -33,7 +35,7 @@ Check old `/?p=ID` shortlinks on the Cloudflare preview or live Worker.
 
 ## Published behavior
 
-`build.py` creates the fleet page, About and Contact pages, 20 active ship
+`build.py` creates the fleet page, About and Contact pages, 23 active ship
 pages, six historical ship pages, the old 23-post shortlink map, sitemap,
 robots file, redirects, and a custom 404 page. The imported RSS feed is kept
 in `legacy/feed.xml` and copied to `site/feed.xml` at build time. It is a
@@ -44,7 +46,7 @@ paths and the domain ID in `build.py` so existing discussions stay attached.
 The original WordPress snapshot is available in Git history before the
 catalog replacement; no PHP, database or private backup belongs here.
 
-The webcam images come from third-party operators and can stop working. The
+The webcam images come from third-party providers and can stop working. The
 page shows an unavailable-camera message when an image fails. `CATALOG_REVIEW.md`
 records dated findings and candidates for catalog updates.
 
