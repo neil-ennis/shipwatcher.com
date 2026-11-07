@@ -35,7 +35,7 @@ Check old `/?p=ID` shortlinks on the Cloudflare preview or live Worker.
 
 ## Published behavior
 
-`build.py` creates the fleet page, About and Contact pages, 23 active ship
+`build.py` creates the fleet page, About and Contact pages, 26 active ship
 pages, six historical ship pages, the old 23-post shortlink map, sitemap,
 robots file, redirects, and a custom 404 page. The imported RSS feed is kept
 in `legacy/feed.xml` and copied to `site/feed.xml` at build time. It is a

@@ -16,7 +16,7 @@ if sys.argv[1:] not in ([], ["--site"]):
     raise SystemExit("Usage: python build.py [--site]")
 OUTPUT = ROOT / ("site" if "--site" in sys.argv[1:] else "dist")
 SHIPS = json.loads((ROOT / "data" / "ships.json").read_text(encoding="utf-8"))
-ALL_LINES = ("Princess Cruises", "Viking", "Explora Journeys", "P&O Australia", "Cunard Line")
+ALL_LINES = ("Princess Cruises", "Viking", "Explora Journeys", "Hapag-Lloyd Cruises", "P&O Australia", "Cunard Line")
 ACTIVE_SHIPS = [ship for ship in SHIPS if ship.get("active", True)]
 LINES = tuple(line for line in ALL_LINES if any(ship["line"] == line for ship in ACTIVE_SHIPS))
 QUOTES = json.loads((ROOT / "data" / "quotes.json").read_text(encoding="utf-8"))

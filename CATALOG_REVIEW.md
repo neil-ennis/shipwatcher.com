@@ -1,5 +1,16 @@
 # Ship catalog review — 16 October 2026
 
+## Update — 8 November 2026
+
+Added [Explora I](https://explorajourneys.panomax.com/explora-1),
+[Viking Sea](https://viking.panomax.com/sea), and
+[MS EUROPA](https://hlkf.panomax.com/ms-europa) from the
+[Panomax live-camera directory](https://cruises.panomax.com/live-cameras).
+Their operator pages and direct `preview_og.jpg` images returned HTTP 200 on
+8 November 2026; the image responses were JPEGs. Added Hapag-Lloyd Cruises as
+its own fleet filter. These are provider-hosted cameras, so the image fallback
+still applies if a feed becomes unavailable.
+
 ## Update — 31 October 2026
 
 Added Viking Vesta, Viking Mira and Explora III to the local catalog. Each has

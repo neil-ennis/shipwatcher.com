@@ -43,6 +43,14 @@
   },
   {
     "legacy_post_id": null,
+    "slug": "explora-i",
+    "name": "Explora I",
+    "line": "Explora Journeys",
+    "camera_url": "https://panodata.panomax.com/cams/6072/preview_og.jpg",
+    "camera_page_url": "https://explorajourneys.panomax.com/explora-1"
+  },
+  {
+    "legacy_post_id": null,
     "slug": "explora-iii",
     "name": "Explora III",
     "line": "Explora Journeys",
@@ -73,6 +81,14 @@
     "camera_url": "https://www.princess.com/webcam/grand_bridge.jpg?9999"
   },
   {
+    "legacy_post_id": null,
+    "slug": "ms-europa",
+    "name": "MS EUROPA",
+    "line": "Hapag-Lloyd Cruises",
+    "camera_url": "https://panodata.panomax.com/cams/1007/preview_og.jpg",
+    "camera_page_url": "https://hlkf.panomax.com/ms-europa"
+  },
+  {
     "legacy_post_id": 114,
     "slug": "island-princess",
     "name": "Island Princess",
@@ -93,6 +109,14 @@
     "line": "Viking",
     "camera_url": "https://panodata.panomax.com/cams/12052/preview_og.jpg",
     "camera_page_url": "https://viking.panomax.com/mira"
+  },
+  {
+    "legacy_post_id": null,
+    "slug": "viking-sea",
+    "name": "Viking Sea",
+    "line": "Viking",
+    "camera_url": "https://panodata.panomax.com/cams/1342/preview_og.jpg",
+    "camera_page_url": "https://viking.panomax.com/sea"
   },
   {
     "legacy_post_id": null,
