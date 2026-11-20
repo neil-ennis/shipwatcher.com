@@ -51,6 +51,14 @@
   },
   {
     "legacy_post_id": null,
+    "slug": "explora-ii",
+    "name": "Explora II",
+    "line": "Explora Journeys",
+    "camera_url": "https://panodata.panomax.com/cams/9040/preview_og.jpg",
+    "camera_page_url": "https://explorajourneys.panomax.com/explora-2/180"
+  },
+  {
+    "legacy_post_id": null,
     "slug": "explora-iii",
     "name": "Explora III",
     "line": "Explora Journeys",
@@ -82,6 +90,14 @@
   },
   {
     "legacy_post_id": null,
+    "slug": "hanseatic-nature",
+    "name": "HANSEATIC nature",
+    "line": "Hapag-Lloyd Cruises",
+    "camera_url": "https://panodata.panomax.com/cams/2124/preview_og.jpg",
+    "camera_page_url": "https://hlkf.panomax.com/hanseatic-nature"
+  },
+  {
+    "legacy_post_id": null,
     "slug": "ms-europa",
     "name": "MS EUROPA",
     "line": "Hapag-Lloyd Cruises",
@@ -109,6 +125,14 @@
     "line": "Viking",
     "camera_url": "https://panodata.panomax.com/cams/12052/preview_og.jpg",
     "camera_page_url": "https://viking.panomax.com/mira"
+  },
+  {
+    "legacy_post_id": null,
+    "slug": "viking-polaris",
+    "name": "Viking Polaris",
+    "line": "Viking",
+    "camera_url": "https://panodata.panomax.com/cams/4755/preview_og.jpg",
+    "camera_page_url": "https://viking.panomax.com/polaris"
   },
   {
     "legacy_post_id": null,

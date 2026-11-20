@@ -1,5 +1,14 @@
 # Ship catalog review — 16 October 2026
 
+## Update — 21 November 2026
+
+Added [Explora II](https://explorajourneys.panomax.com/explora-2/180),
+[HANSEATIC nature](https://hlkf.panomax.com/hanseatic-nature), and
+[Viking Polaris](https://viking.panomax.com/polaris). The direct Panomax
+preview URLs returned recent JPEG stills on 20 November. Each ship page also
+links to its interactive panorama. MS EUROPA 2 was excluded because its
+provider page returned the same preview and page title as MS EUROPA.
+
 ## Update — 8 November 2026
 
 Added [Explora I](https://explorajourneys.panomax.com/explora-1),
