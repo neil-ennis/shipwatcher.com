@@ -105,6 +105,30 @@
     "camera_page_url": "https://hlkf.panomax.com/ms-europa"
   },
   {
+    "legacy_post_id": null,
+    "slug": "hanseatic-inspiration",
+    "name": "HANSEATIC inspiration",
+    "line": "Hapag-Lloyd Cruises",
+    "camera_url": "https://panodata.panomax.com/cams/2221/preview_og.jpg",
+    "camera_page_url": "https://hlkf.panomax.com/hanseatic-inspiration"
+  },
+  {
+    "legacy_post_id": null,
+    "slug": "hanseatic-spirit",
+    "name": "HANSEATIC spirit",
+    "line": "Hapag-Lloyd Cruises",
+    "camera_url": "https://panodata.panomax.com/cams/3404/preview_og.jpg",
+    "camera_page_url": "https://hlkf.panomax.com/hanseatic-spirit"
+  },
+  {
+    "legacy_post_id": null,
+    "slug": "ms-europa-2",
+    "name": "MS EUROPA 2",
+    "line": "Hapag-Lloyd Cruises",
+    "camera_url": "https://panodata.panomax.com/cams/1555/preview_og.jpg",
+    "camera_page_url": "https://hlkf.panomax.com/ms-europa2"
+  },
+  {
     "legacy_post_id": 114,
     "slug": "island-princess",
     "name": "Island Princess",

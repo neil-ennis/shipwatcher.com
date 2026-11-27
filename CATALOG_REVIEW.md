@@ -1,5 +1,13 @@
 # Ship catalog review — 16 October 2026
 
+## Update — 27 November 2026
+
+Added [MS EUROPA 2](https://hlkf.panomax.com/ms-europa2),
+[HANSEATIC inspiration](https://hlkf.panomax.com/hanseatic-inspiration) and
+[HANSEATIC spirit](https://hlkf.panomax.com/hanseatic-spirit). Each named viewer
+served a distinct, current JPEG. The confirmed EUROPA 2 viewer uses the path
+`ms-europa2` and camera 1555. MS EUROPA uses camera 1007.
+
 ## Update — 21 November 2026
 
 Added [Explora II](https://explorajourneys.panomax.com/explora-2/180),
